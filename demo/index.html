@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular-UndoBuffer</title>
+	<meta http-equiv="Content-Language" content="en"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="google" value="notranslate"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="yes"/>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+
+	<!-- jQuery -->
+	<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+
+	<!-- Bootstrap -->
+	<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- Font-awesome -->
+	<link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- lodash -->
+	<script src="/node_modules/lodash/lodash.min.js"></script>
+
+	<!-- Angular -->
+	<script src="/node_modules/angular/angular.min.js"></script>
+	<script src="/node_modules/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.min.js"></script>
+	<link href="/node_modules/angular-bootstrap-colorpicker/css/colorpicker.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Demo setup -->
+	<script src="/js/app.js"></script>
+	<link href="/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Angular-UndoBuffer -->
+	<script src="/js/angular-ui-flag.js"></script>
+</head>
+<style>
+</style>
+
+<body ng-app="app">
+	<div ng-controller="flagExampleController" class="container">
+		<div class="row mar-top-md">
+			<div class="col-sm-12 col-md-6">
+				<ui-flag style="flagStyle"></ui-flag>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Background</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="btn-group col-xs-12">
+								<a ng-repeat="option in options.backgrounds" class="btn btn-default">
+									{{option}}
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2"><div class="form-control-static">Color #1</div></div>
+							<div class="btn-group col-xs-10">
+								<a ng-repeat="color in colors" ng-click="set('flagStyle.background.color1', color)" class="btn btn-default btn-color" ng-class="flagStyle.background.color1==color && 'active'">
+									<div class="block-color" style="background: {{color}}"></div>
+								</a>
+								<a class="btn btn-default btn-color" colorpicker="hex" ng-model="flagStyle.background.color1" >
+									<div class="block-color" style="background: {{flagStyle.background.color1}}"></div>
+									{{flagStyle.background.color1}}
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2"><div class="form-control-static">Color #2</div></div>
+							<div class="btn-group col-xs-10">
+								<a ng-repeat="color in colors" ng-click="set('flagStyle.background.color2', color)" class="btn btn-default btn-color" ng-class="flagStyle.background.color2==color && 'active'">
+									<div class="block-color" style="background: {{color}}"></div>
+								</a>
+								<a class="btn btn-default btn-color" colorpicker="hex" ng-model="flagStyle.background.color2" >
+									<div class="block-color" style="background: {{flagStyle.background.color2}}"></div>
+									{{flagStyle.background.color2}}
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2"><div class="form-control-static">Color #3</div></div>
+							<div class="btn-group col-xs-10">
+								<a ng-repeat="color in colors" ng-click="set('flagStyle.background.color3', color)" class="btn btn-default btn-color" ng-class="flagStyle.background.color3==color && 'active'">
+									<div class="block-color" style="background: {{color}}"></div>
+								</a>
+								<a class="btn btn-default btn-color" colorpicker="hex" ng-model="flagStyle.background.color3" >
+									<div class="block-color" style="background: {{flagStyle.background.color3}}"></div>
+									{{flagStyle.background.color3}}
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">Foreground</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="btn-group col-xs-12">
+								<a ng-repeat="option in options.foregrounds" class="btn btn-default">
+									{{option}}
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2"><div class="form-control-static">Color #1</div></div>
+							<div class="btn-group col-xs-10">
+								<a ng-repeat="color in colors" ng-click="set('flagStyle.foreground.color1', color)" class="btn btn-default btn-color" ng-class="flagStyle.foreground.color1==color && 'active'">
+									<div class="block-color" style="background: {{color}}"></div>
+								</a>
+								<a class="btn btn-default btn-color" colorpicker="hex" ng-model="flagStyle.foreground.color1" >
+									<div class="block-color" style="background: {{flagStyle.foreground.color1}}"></div>
+									{{flagStyle.foreground.color1}}
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">Feature</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="btn-group col-xs-12">
+								<a ng-repeat="option in options.features" class="btn btn-default">
+									{{option}}
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2"><div class="form-control-static">Color #1</div></div>
+							<div class="btn-group col-xs-10">
+								<a ng-repeat="color in colors" ng-click="set('flagStyle.feature.color1', color)" class="btn btn-default btn-color" ng-class="flagStyle.feature.color1==color && 'active'">
+									<div class="block-color" style="background: {{color}}"></div>
+								</a>
+								<a class="btn btn-default btn-color" colorpicker="hex" ng-model="flagStyle.feature.color1" >
+									<div class="block-color" style="background: {{flagStyle.feature.color1}}"></div>
+									{{flagStyle.feature.color1}}
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

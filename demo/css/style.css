@@ -1,0 +1,30 @@
+a {
+	cursor: pointer;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+td > a {
+	display: block;
+}
+
+.mar-top-md {
+	margin-top: 10px;
+}
+
+.row + .row {
+	margin-top: 10px;
+}
+
+.btn-color {
+	padding: 5px;
+}
+
+.block-color {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
