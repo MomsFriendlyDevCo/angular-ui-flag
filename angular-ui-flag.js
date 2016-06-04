@@ -48,7 +48,6 @@ angular.module('angular-ui-flag', [])
 			// Background {{{
 			$scope._lastBackground;
 			$scope.redrawBackground = function() {
-				console.log('angular-ui-flag> redrawBackground');
 				if ($scope.style.background.svg == $scope._lastBackground) return $scope.styleBackground(); // No need to reload - just restyle
 				$http.get($scope.style.background.svg)
 					.then(function(res) {
@@ -74,7 +73,7 @@ angular.module('angular-ui-flag', [])
 
 			// Foreground {{{
 			$scope.redrawForeground = function() {
-				console.log('angular-ui-flag> redrawForeground');
+				// console.log('angular-ui-flag> redrawForeground');
 				// FIXME
 			};
 			// }}}
@@ -82,14 +81,13 @@ angular.module('angular-ui-flag', [])
 			// Feature {{{
 			$scope._lastFeature;
 			$scope.redrawFeature = function() {
-				console.log('angular-ui-flag> redrawFeature');
 				// if ($scope.style.feature.svg == $scope._lastFeature) return $scope.styleFeature(); // No need to reload - just restyle
 				$http.get($scope.style.feature.svg)
 					.then(function(res) {
 						var boundingElem = angular.element($scope.elementSections.background).find('#feature');
 						if (!boundingElem.length) return console.warn('Cannot find #feature ID within background', $scope.style.background.svg);
-						console.log('BOUND ELEM', boundingElem[0]);
-						console.log('BOUND', boundingElem.attr('x'), boundingElem.attr('y'), boundingElem.attr('width'), boundingElem.attr('height'));
+						// console.log('BOUND ELEM', boundingElem[0]);
+						// console.log('BOUND', boundingElem.attr('x'), boundingElem.attr('y'), boundingElem.attr('width'), boundingElem.attr('height'));
 
 						$scope.elementSections.feature.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.feature.children[0]);
