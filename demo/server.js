@@ -29,6 +29,7 @@ app.get('/js/angular-ui-flag.js', function(req, res) {
 app.use('/node_modules', express.static(root + '/node_modules'));
 app.use('/css', express.static(root + '/demo/css'));
 app.use('/js', express.static(root + '/demo/js'));
+app.use('/svg', express.static(root + '/svg'));
 
 app.use(function(err, req, res, next){
 	console.error(err.stack);

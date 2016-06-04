@@ -18,6 +18,10 @@ td > a {
 	margin-top: 10px;
 }
 
+.panel-heading .btn {
+	margin-top: -5px;
+}
+
 .btn-color {
 	padding: 5px;
 }
