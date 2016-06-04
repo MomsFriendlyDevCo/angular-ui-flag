@@ -249,6 +249,24 @@ app.controller('flagExampleController', function($scope, $interval) {
 	};
 	// }}}
 
+	// Workaround for mobiles {{{
+	$(function() {
+		$(window)
+			.on('resize', function() {
+				if ($(window).width() < 500) {
+					$('.well').css('padding', '2px');
+					$('ui-flag > svg > g')
+						.attr('transform', 'scale(0.7, 0.7)');
+				} else {
+					$('.well').css('padding', '5px');
+					$('ui-flag > svg > g')
+						.attr('transform', 'scale(1, 1)');
+				}
+			})
+			.trigger('resize');
+	});
+	// }}}
+
 	// Kick off all ranomizers on load {{{
 	$scope.$evalAsync($scope.randomizeAll);
 	// }}}
