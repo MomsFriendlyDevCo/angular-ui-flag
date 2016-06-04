@@ -45,6 +45,7 @@ angular.module('angular-ui-flag', [])
 			// }}}
 
 			// Redrawing {{{
+			// Background {{{
 			$scope._lastBackground;
 			$scope.redrawBackground = function() {
 				console.log('angular-ui-flag> redrawBackground');
@@ -69,22 +70,54 @@ angular.module('angular-ui-flag', [])
 				splits[1].forEach(function(elem) { elem.css('fill', $scope.style.background.color2) });
 				splits[2].forEach(function(elem) { elem.css('fill', $scope.style.background.color3) });
 			};
+			// }}}
 
+			// Foreground {{{
 			$scope.redrawForeground = function() {
 				console.log('angular-ui-flag> redrawForeground');
 				// FIXME
 			};
+			// }}}
 
+			// Feature {{{
+			$scope._lastFeature;
 			$scope.redrawFeature = function() {
 				console.log('angular-ui-flag> redrawFeature');
-				// FIXME
+				// if ($scope.style.feature.svg == $scope._lastFeature) return $scope.styleFeature(); // No need to reload - just restyle
+				$http.get($scope.style.feature.svg)
+					.then(function(res) {
+						var boundingElem = angular.element($scope.elementSections.background).find('#feature');
+						if (!boundingElem.length) return console.warn('Cannot find #feature ID within background', $scope.style.background.svg);
+						console.log('BOUND ELEM', boundingElem[0]);
+						console.log('BOUND', boundingElem.attr('x'), boundingElem.attr('y'), boundingElem.attr('width'), boundingElem.attr('height'));
+
+						$scope.elementSections.feature.innerHTML = res.data;
+						var newSVG = angular.element($scope.elementSections.feature.children[0]);
+						newSVG.attr({
+							x: boundingElem.attr('x') || '0',
+							y: boundingElem.attr('y') || '0',
+							width: boundingElem.attr('width') || $scope.style.frame.width,
+							height: boundingElem.attr('height') || $scope.style.frame.height,
+						});
+						$scope.styleFeature();
+						$scope._lastFeature = $scope.style.feature.svg;
+					})
 			};
+
+			$scope.styleFeature = function() {
+				var splits = $scope.splitColors($scope.elementSections.feature.children[0]);
+
+				splits[0].forEach(function(elem) { elem.css('fill', $scope.style.background.color1) });
+				splits[1].forEach(function(elem) { elem.css('fill', $scope.style.background.color2) });
+				splits[2].forEach(function(elem) { elem.css('fill', $scope.style.background.color3) });
+			};
+			// }}}
 			// }}}
 
 			// Watching + trigger redrawing {{{
 			$scope.$watchGroup(['style.background.svg', 'style.background.color1', 'style.background.color2', 'style.background.color3'], $scope.redrawBackground);
 			$scope.$watchGroup(['style.foreground.svg', 'style.foreground.color1'], $scope.redrawForeground);
-			$scope.$watchGroup(['style.feature.svg', 'style.feature.color1'], $scope.redrawFeature);
+			$scope.$watchGroup(['style.feature.svg', 'style.background.svg', 'style.feature.color1'], $scope.redrawFeature);
 			// }}}
 		},
 		link: function($scope, elem, attr, ctrl) {

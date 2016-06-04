@@ -42,6 +42,9 @@ app.controller('flagExampleController', function($scope) {
 	
 	// .options - available options for each flag part {{{
 	$scope.options = {
+		activeBackground: null,
+		activeForeground: null,
+		activeFeature: null,
 		backgrounds: [
 			{
 				title: 'Plain',
@@ -59,8 +62,18 @@ app.controller('flagExampleController', function($scope) {
 				colorCount: 3,
 			},
 			{
+				title: 'Horizontal Stripes (Tight)',
+				file: 'svg/bg/horiz-stripes-tight.svg',
+				colorCount: 3,
+			},
+			{
 				title: 'Vertical Stripes',
 				file: 'svg/bg/vert-stripes.svg',
+				colorCount: 3,
+			},
+			{
+				title: 'Vertical Stripes (Fat)',
+				file: 'svg/bg/vert-stripes-fat.svg',
 				colorCount: 3,
 			},
 			{
@@ -74,17 +87,90 @@ app.controller('flagExampleController', function($scope) {
 				colorCount: 2,
 			},
 			{
+				title: 'Corners',
+				file: 'svg/bg/corners.svg',
+				colorCount: 2,
+			},
+			{
+				title: 'Stripe 1',
+				file: 'svg/bg/stripe-1.svg',
+				colorCount: 3,
+			},
+			{
+				title: 'Stripe 2',
+				file: 'svg/bg/stripe-2.svg',
+				colorCount: 3,
+			},
+			{
 				title: 'Union Jack',
 				file: 'svg/bg/union-jack.svg',
 				colorCount: 3,
 			},
+			{
+				title: 'Union Jack (Top-Left corner)',
+				file: 'svg/bg/union-jack-corner.svg',
+				colorCount: 3,
+			},
+			{
+				title: 'Zig Zag',
+				file: 'svg/bg/zig-zag.svg',
+				colorCount: 2,
+			},
 		],
-		activeBackground: null,
 		foregrounds: [
 			'FIXME-fg-svg-1',
 		],
 		features: [
-			'FIXME-ft-svg-1',
+			{
+				title: 'Blank',
+				file: 'svg/ft/blank.svg',
+				colorCount: 0,
+			},
+			{
+				title: 'Dragon',
+				file: 'svg/ft/dragon.svg',
+				colorCount: 1,
+			},
+			{
+				title: 'Maple Leaf',
+				file: 'svg/ft/maple-leaf.svg',
+				colorCount: 1,
+			},
+			{
+				title: 'Moon + Star',
+				file: 'svg/ft/moon-star.svg',
+				colorCount: 2,
+			},
+			{
+				title: 'Moon + Star (Circle)',
+				file: 'svg/ft/moon-star-circle.svg',
+				colorCount: 3,
+			},
+			{
+				title: 'Plus',
+				file: 'svg/ft/plus.svg',
+				colorCount: 1,
+			},
+			{
+				title: 'Southern Cross',
+				file: 'svg/ft/southern-cross.svg',
+				colorCount: 1,
+			},
+			{
+				title: 'Star (4 points)',
+				file: 'svg/ft/star-4.svg',
+				colorCount: 1,
+			},
+			{
+				title: 'Star (5 points)',
+				file: 'svg/ft/star-5.svg',
+				colorCount: 1,
+			},
+			{
+				title: 'Star (12 points)',
+				file: 'svg/ft/star-12.svg',
+				colorCount: 1,
+			},
 		],
 	};
 	// }}}
@@ -92,6 +178,14 @@ app.controller('flagExampleController', function($scope) {
 	// Set options.active{background|foreground|feature} trackers {{{
 	$scope.$watch('flagStyle.background.svg', function() {
 		$scope.activeBackground = _.find($scope.options.backgrounds, {file: $scope.flagStyle.background.svg});
+	});
+
+	$scope.$watch('flagStyle.foreground.svg', function() {
+		$scope.activeforeground = _.find($scope.options.foregrounds, {file: $scope.flagStyle.foreground.svg});
+	});
+
+	$scope.$watch('flagStyle.feature.svg', function() {
+		$scope.activeFeature = _.find($scope.options.features, {file: $scope.flagStyle.feature.svg});
 	});
 	// }}}
 
@@ -102,6 +196,12 @@ app.controller('flagExampleController', function($scope) {
 	// }}}
 
 	// Randomizers {{{
+	$scope.randomizeAll = function() {
+		$scope.randomizeBackground();
+		$scope.randomizeForeground();
+		$scope.randomizeFeature();
+	};
+
 	$scope.randomizeBackground = function() {
 		$scope.flagStyle.background = {
 			svg: _.sample($scope.options.backgrounds).file,
@@ -110,5 +210,27 @@ app.controller('flagExampleController', function($scope) {
 			color3: _.sample($scope.colors),
 		};
 	};
+
+	$scope.randomizeForeground = function() {
+		$scope.flagStyle.foreground = {
+			svg: _.sample($scope.options.foregrounds).file,
+			color1: _.sample($scope.colors),
+			color2: _.sample($scope.colors),
+			color3: _.sample($scope.colors),
+		};
+	};
+
+	$scope.randomizeFeature = function() {
+		$scope.flagStyle.feature = {
+			svg: _.sample($scope.options.features).file,
+			color1: _.sample($scope.colors),
+			color2: _.sample($scope.colors),
+			color3: _.sample($scope.colors),
+		};
+	};
+	// }}}
+
+	// Kick off all ranomizers on load {{{
+	$scope.$evalAsync($scope.randomizeAll);
 	// }}}
 });

@@ -35,7 +35,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.9195959"
-     inkscape:cx="17.857142"
+     inkscape:cx="13.563993"
      inkscape:cy="-3.6856649"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -66,20 +66,24 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-1.1e-6,-3.9687507e-7)">
-    <path
-       inkscape:connector-curvature="0"
-       id="path51116"
-       style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 1.1e-6,14.325063 73.6564749,0 0,-14.325062603125 -73.6564749,0 0,14.325062603125 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path51118"
-       style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 1.1e-6,28.637967 73.6564749,0 0,-14.312939 -73.6564749,0 0,14.312939 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path51120"
-       style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 1.1e-6,42.962254 73.6564749,0 0,-14.32439 -73.6564749,0 0,14.32439 z" />
+    <g
+       id="feature"
+       inkscape:label="#g79614">
+      <path
+         d="m 1.1e-6,14.325063 73.6564749,0 0,-14.325062603125 -73.6564749,0 0,14.325062603125 z"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path51116"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 1.1e-6,28.637967 73.6564749,0 0,-14.312939 -73.6564749,0 0,14.312939 z"
+         style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path51118"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 1.1e-6,42.962254 73.6564749,0 0,-14.32439 -73.6564749,0 0,14.32439 z"
+         style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path51120"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>
