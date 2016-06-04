@@ -3,7 +3,7 @@ var app = angular.module('app', [
 	'colorpicker.module',
 ]);
 
-app.controller('flagExampleController', function($scope) {
+app.controller('flagExampleController', function($scope, $interval) {
 	// .flagStyle - flag drawing options {{{
 	$scope.flagStyle = {
 		frame: {
@@ -193,6 +193,25 @@ app.controller('flagExampleController', function($scope) {
 	$scope.set = function(path, value) {
 		_.set($scope, path, value);
 	};
+	// }}}
+
+	// .toggle() - utility function to otggle a path (via lodash _.set) {{{
+	$scope.toggle = function(path) {
+		_.set($scope, path, !_.get($scope, path));
+	};
+	// }}}
+
+	// Timer {{{
+	$scope.timerInterval = 2000;
+	$scope.timerEnabled = false;
+	$scope.timerHandle;
+	$scope.$watch('timerEnabled', function() {
+		if ($scope.timerEnabled) {
+			$scope.timerHandle = $interval($scope.randomizeAll, $scope.timerInterval);
+		} else {
+			$interval.cancel($scope.timerHandle);
+		}
+	});
 	// }}}
 
 	// Randomizers {{{
