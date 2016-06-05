@@ -15,6 +15,11 @@
 		"colorCount": 2
 	},
 	{
+		"title": "Cross (Diagonal)",
+		"file": "svg/bg/cross-diag.svg",
+		"colorCount": 3
+	},
+	{
 		"title": "Corners",
 		"file": "svg/bg/corners.svg",
 		"colorCount": 2
@@ -25,6 +30,11 @@
 		"colorCount": 2
 	},
 	{
+		"title": "Feature top left (stiped)",
+		"file": "svg/bg/sq-top-left-stiped.svg",
+		"colorCount": 3
+	},
+	{
 		"title": "Horizontal Stripes",
 		"file": "svg/bg/horiz-stripes.svg",
 		"colorCount": 3
@@ -33,6 +43,11 @@
 		"title": "Horizontal Stripes (Tight)",
 		"file": "svg/bg/horiz-stripes-tight.svg",
 		"colorCount": 3
+	},
+	{
+		"title": "Outline (Thick)",
+		"file": "svg/bg/outline-thick.svg",
+		"colorCount": 2
 	},
 	{
 		"title": "Vertical Stripes",
@@ -52,6 +67,11 @@
 	{
 		"title": "Stripe 2",
 		"file": "svg/bg/stripe-2.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Stripe Horizontal (Thick)",
+		"file": "svg/bg/stripe-horiz-thick.svg",
 		"colorCount": 3
 	},
 	{
