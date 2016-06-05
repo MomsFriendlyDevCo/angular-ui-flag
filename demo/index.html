@@ -58,6 +58,7 @@
 					<div class="panel-body text-center">
 						<a ng-click="randomizeAll()" class="btn btn-lg btn-primary"><i class="fa fa-random"></i> Randomize All</a>
 						<a ng-click="toggle('timerEnabled')" class="btn btn-lg btn-warning" ng-class="timerEnabled && 'active'"><i class="fa" ng-class="timerEnabled ? 'fa-spinner fa-spin' : 'fa-clock-o'"></i> Auto</a>
+						<a class="btn btn-lg btn-default" href="https://github.com/MomsFriendlyDevCo/angular-ui-flag.git"><i class="fa fa-github"></i></a>
 					</div>
 				</div>
 				<!-- }}} -->
@@ -72,7 +73,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="btn-group col-xs-12">
-								<a ng-repeat="option in options.backgrounds track by option.file" ng-click="set('flagStyle.background.svg', option.file)" ng-class="flagStyle.background.svg==option.file && 'active'" class="btn btn-default">
+								<a ng-repeat="option in options.backgrounds track by option.file" ng-click="set('flagStyle.background.svg', option.file)" ng-class="flagStyle.background.svg==option.file && 'active'" class="btn btn-sm btn-default">
 									{{option.title}}
 								</a>
 							</div>
@@ -127,7 +128,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="btn-group col-xs-12">
-								<a ng-repeat="option in options.foregrounds track by option.file" ng-click="set('flagStyle.foreground.svg', option.file)" ng-class="flagStyle.foreground.svg==option.file && 'active'" class="btn btn-default">
+								<a ng-repeat="option in options.foregrounds track by option.file" ng-click="set('flagStyle.foreground.svg', option.file)" ng-class="flagStyle.foreground.svg==option.file && 'active'" class="btn btn-default btn-sm">
 									{{option.title}}
 								</a>
 							</div>
@@ -182,7 +183,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="btn-group col-xs-12">
-								<a ng-repeat="option in options.features track by option.file" ng-click="set('flagStyle.feature.svg', option.file)"  ng-class="flagStyle.feature.svg==option.file && 'active'" class="btn btn-default">
+								<a ng-repeat="option in options.features track by option.file" ng-click="set('flagStyle.feature.svg', option.file)"  ng-class="flagStyle.feature.svg==option.file && 'active'" class="btn btn-default btn-sm">
 									{{option.title}}
 								</a>
 							</div>
