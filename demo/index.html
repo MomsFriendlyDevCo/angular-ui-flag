@@ -53,12 +53,15 @@
 				<ui-flag style="flagStyle"></ui-flag>
 			</div>
 			<div class="col-sm-12 col-md-6">
+				<!-- Master controls {{{ -->
 				<div class="panel panel-primary">
 					<div class="panel-body text-center">
 						<a ng-click="randomizeAll()" class="btn btn-lg btn-primary"><i class="fa fa-random"></i> Randomize All</a>
 						<a ng-click="toggle('timerEnabled')" class="btn btn-lg btn-warning" ng-class="timerEnabled && 'active'"><i class="fa" ng-class="timerEnabled ? 'fa-spinner fa-spin' : 'fa-clock-o'"></i> Auto</a>
 					</div>
 				</div>
+				<!-- }}} -->
+				<!-- Background {{{ -->
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						Background
@@ -112,6 +115,8 @@
 						</div>
 					</div>
 				</div>
+				<!-- }}} -->
+				<!-- Foreground {{{ -->
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						Foreground
@@ -141,6 +146,8 @@
 						</div>
 					</div>
 				</div>
+				<!-- }}} -->
+				<!-- Feature {{{ -->
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						Feature
@@ -170,6 +177,7 @@
 						</div>
 					</div>
 				</div>
+				<!-- }}} -->
 			</div>
 		</div>
 	</div>
