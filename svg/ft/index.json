@@ -48,5 +48,10 @@
 		"title": "Star (12 points)",
 		"file": "svg/ft/star-12.svg",
 		"colorCount": 3
+	},
+	{
+		"title": "Star (USA style)",
+		"file": "svg/ft/star-us.svg",
+		"colorCount": 2
 	}
 ]
