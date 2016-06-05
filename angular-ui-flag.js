@@ -72,9 +72,28 @@ angular.module('angular-ui-flag', [])
 			// }}}
 
 			// Foreground {{{
+			$scope.lastForeground;
 			$scope.redrawForeground = function() {
-				// console.log('angular-ui-flag> redrawForeground');
-				// FIXME
+				if ($scope.style.foreground.svg == $scope._lastForeground) return $scope.styleForeground(); // No need to reload - just restyle
+				$http.get($scope.style.foreground.svg)
+					.then(function(res) {
+						$scope.elementSections.foreground.innerHTML = res.data;
+						var newSVG = angular.element($scope.elementSections.foreground.children[0]);
+						newSVG.attr({
+							width: $scope.style.frame.width,
+							height: $scope.style.frame.height,
+						});
+						$scope.styleForeground();
+						$scope._lastForeground = $scope.style.foreground.svg;
+					})
+			};
+
+			$scope.styleForeground = function() {
+				var splits = $scope.splitColors($scope.elementSections.foreground.children[0]);
+
+				splits[0].forEach(function(elem) { elem.css('fill', $scope.style.foreground.color1) });
+				splits[1].forEach(function(elem) { elem.css('fill', $scope.style.foreground.color2) });
+				splits[2].forEach(function(elem) { elem.css('fill', $scope.style.foreground.color3) });
 			};
 			// }}}
 
@@ -121,7 +140,7 @@ angular.module('angular-ui-flag', [])
 		link: function($scope, elem, attr, ctrl) {
 			$scope.elementSections = {
 				background: elem.find('.ui-flag-background')[0],
-				foreground: elem.find('.ui-flag-background')[0],
+				foreground: elem.find('.ui-flag-foreground')[0],
 				feature: elem.find('.ui-flag-feature')[0],
 			};
 		},
