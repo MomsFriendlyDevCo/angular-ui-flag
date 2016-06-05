@@ -78,15 +78,15 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 
 	// Set options.active{background|foreground|feature} trackers {{{
 	$scope.$watch('flagStyle.background.svg', function() {
-		$scope.activeBackground = _.find($scope.options.backgrounds, {file: $scope.flagStyle.background.svg});
+		$scope.options.activeBackground = _.find($scope.options.backgrounds, {file: $scope.flagStyle.background.svg});
 	});
 
 	$scope.$watch('flagStyle.foreground.svg', function() {
-		$scope.activeforeground = _.find($scope.options.foregrounds, {file: $scope.flagStyle.foreground.svg});
+		$scope.options.activeForeground = _.find($scope.options.foregrounds, {file: $scope.flagStyle.foreground.svg});
 	});
 
 	$scope.$watch('flagStyle.feature.svg', function() {
-		$scope.activeFeature = _.find($scope.options.features, {file: $scope.flagStyle.feature.svg});
+		$scope.options.activeFeature = _.find($scope.options.features, {file: $scope.flagStyle.feature.svg});
 	});
 	// }}}
 
