@@ -55,8 +55,13 @@
 		"colorCount": 2
 	},
 	{
-		"title": "Vertical Stripes",
-		"file": "svg/bg/vert-stripes.svg",
+		"title": "Vertical Stripes (Double)",
+		"file": "svg/bg/vert-stripes-double.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Vertical Stripes (Tripple)",
+		"file": "svg/bg/vert-stripes-tripple.svg",
 		"colorCount": 3
 	},
 	{
@@ -82,6 +87,11 @@
 	{
 		"title": "Stripe Horizontal (Thick)",
 		"file": "svg/bg/stripe-horiz-thick.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Sunburst",
+		"file": "svg/bg/sunburst.svg",
 		"colorCount": 3
 	},
 	{

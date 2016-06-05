@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="20.787106mm"
+   height="12.125706mm"
+   viewBox="0 0 73.655098 42.965099"
+   id="svg29866"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="bar-horiz-double.svg">
+  <defs
+     id="defs29868">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7398">
+      <path
+         d="m 2082.39,12803.5 427.082,0 0,249.129 -427.082,0 0,-249.129 z"
+         id="path7400"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="19.830049"
+     inkscape:cx="36.827549"
+     inkscape:cy="21.48255"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata29871">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-346.02959,-456.59399)">
+    <path
+       d="m 346.02959,474.86263 73.65786,0 0,-2.37875 -73.65786,0 0,2.37875 z"
+       style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path7404"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 346.02959,483.65816 73.65786,0 0,-2.37807 -73.65786,0 0,2.37807 z"
+       style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path7408"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 346.02959,481.95079 73.65786,0 0,-7.77628 -73.65786,0 0,7.77628 z"
+       style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path7410"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

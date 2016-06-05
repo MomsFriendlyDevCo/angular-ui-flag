@@ -10,6 +10,21 @@
 		"colorCount": 1
 	},
 	{
+		"title": "Bar (Horizontal)",
+		"file": "svg/fg/bar-horiz.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Bar (Double Horizontal)",
+		"file": "svg/fg/bar-horiz-double.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Bar (Vertical)",
+		"file": "svg/fg/bar-vert.svg",
+		"colorCount": 1
+	},
+	{
 		"title": "Stripe (Left)",
 		"file": "svg/fg/stripe-left.svg",
 		"colorCount": 1
