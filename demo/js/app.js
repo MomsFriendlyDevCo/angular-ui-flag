@@ -3,7 +3,7 @@ var app = angular.module('app', [
 	'colorpicker.module',
 ]);
 
-app.controller('flagExampleController', function($scope, $interval) {
+app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 	// .flagStyle - flag drawing options {{{
 	$scope.flagStyle = {
 		frame: {
@@ -11,17 +11,17 @@ app.controller('flagExampleController', function($scope, $interval) {
 			height: 300,
 		},
 		background: {
-			svg: 'svg/bg/sq-top-left.svg',
+			svg: '',
 			color1: '#FF0000',
 			color2: '#00FF00',
 			color3: '#0000FF',
 		},
 		foreground: {
-			svg: 'FIXME-fg',
+			svg: '',
 			color1: '#FFFF00',
 		},
 		feature: {
-			svg: 'FIXME-ft',
+			svg: '',
 			color1: '#00FFFF',
 		},
 	};
@@ -45,134 +45,31 @@ app.controller('flagExampleController', function($scope, $interval) {
 		activeBackground: null,
 		activeForeground: null,
 		activeFeature: null,
-		backgrounds: [
-			{
-				title: 'Plain',
-				file: 'svg/bg/plain.svg',
-				colorCount: 1,
-			},
-			{
-				title: 'Feature in top left',
-				file: 'svg/bg/sq-top-left.svg',
-				colorCount: 2,
-			},
-			{
-				title: 'Horizontal Stripes',
-				file: 'svg/bg/horiz-stripes.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Horizontal Stripes (Tight)',
-				file: 'svg/bg/horiz-stripes-tight.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Vertical Stripes',
-				file: 'svg/bg/vert-stripes.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Vertical Stripes (Fat)',
-				file: 'svg/bg/vert-stripes-fat.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Cross (Left-offset)',
-				file: 'svg/bg/left-cross.svg',
-				colorCount: 2,
-			},
-			{
-				title: 'Cross (Centered)',
-				file: 'svg/bg/cross.svg',
-				colorCount: 2,
-			},
-			{
-				title: 'Corners',
-				file: 'svg/bg/corners.svg',
-				colorCount: 2,
-			},
-			{
-				title: 'Stripe 1',
-				file: 'svg/bg/stripe-1.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Stripe 2',
-				file: 'svg/bg/stripe-2.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Union Jack',
-				file: 'svg/bg/union-jack.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Union Jack (Top-Left corner)',
-				file: 'svg/bg/union-jack-corner.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Zig Zag',
-				file: 'svg/bg/zig-zag.svg',
-				colorCount: 2,
-			},
-		],
-		foregrounds: [
-			'FIXME-fg-svg-1',
-		],
-		features: [
-			{
-				title: 'Blank',
-				file: 'svg/ft/blank.svg',
-				colorCount: 0,
-			},
-			{
-				title: 'Dragon',
-				file: 'svg/ft/dragon.svg',
-				colorCount: 1,
-			},
-			{
-				title: 'Maple Leaf',
-				file: 'svg/ft/maple-leaf.svg',
-				colorCount: 1,
-			},
-			{
-				title: 'Moon + Star',
-				file: 'svg/ft/moon-star.svg',
-				colorCount: 2,
-			},
-			{
-				title: 'Moon + Star (Circle)',
-				file: 'svg/ft/moon-star-circle.svg',
-				colorCount: 3,
-			},
-			{
-				title: 'Plus',
-				file: 'svg/ft/plus.svg',
-				colorCount: 1,
-			},
-			{
-				title: 'Southern Cross',
-				file: 'svg/ft/southern-cross.svg',
-				colorCount: 1,
-			},
-			{
-				title: 'Star (4 points)',
-				file: 'svg/ft/star-4.svg',
-				colorCount: 1,
-			},
-			{
-				title: 'Star (5 points)',
-				file: 'svg/ft/star-5.svg',
-				colorCount: 1,
-			},
-			{
-				title: 'Star (12 points)',
-				file: 'svg/ft/star-12.svg',
-				colorCount: 1,
-			},
-		],
+		backgrounds: [], // Loaded from svg/bg/index.json
+		foregrounds: [],
+		features: [],
 	};
+
+	$scope.loading = true;
+	$q.all([
+		$http.get('/svg/bg/index.json')
+			.then(function(res) {
+				$scope.options.backgrounds = res.data;
+			}),
+
+		$http.get('/svg/fg/index.json')
+			.then(function(res) {
+				$scope.options.foregrounds = res.data;
+			}),
+
+		$http.get('/svg/ft/index.json')
+			.then(function(res) {
+				$scope.options.features = res.data;
+			}),
+	])
+		.then(function() {
+			$scope.loading = false;
+		});
 	// }}}
 
 	// Set options.active{background|foreground|feature} trackers {{{
@@ -268,6 +165,9 @@ app.controller('flagExampleController', function($scope, $interval) {
 	// }}}
 
 	// Kick off all ranomizers on load {{{
-	$scope.$evalAsync($scope.randomizeAll);
+	$scope.$watchGroup(['options.backgrounds', 'options.foregrounds', 'options.features'], function() {
+		if (!$scope.options.backgrounds.length || !$scope.options.foregrounds.length || !$scope.options.features.length) return; // Load yet loaded everything
+		$scope.randomizeAll();
+	});
 	// }}}
 });

@@ -1,0 +1,52 @@
+[
+	{
+		"title": "Blank",
+		"file": "svg/ft/blank.svg",
+		"colorCount": 0
+	},
+	{
+		"title": "Dragon",
+		"file": "svg/ft/dragon.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Maple Leaf",
+		"file": "svg/ft/maple-leaf.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Moon + Star",
+		"file": "svg/ft/moon-star.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Moon + Star (Circle)",
+		"file": "svg/ft/moon-star-circle.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Plus",
+		"file": "svg/ft/plus.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Southern Cross",
+		"file": "svg/ft/southern-cross.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Star (4 points)",
+		"file": "svg/ft/star-4.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Star (5 points)",
+		"file": "svg/ft/star-5.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Star (12 points)",
+		"file": "svg/ft/star-12.svg",
+		"colorCount": 1
+	}
+]
