@@ -19,10 +19,14 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 		foreground: {
 			svg: '',
 			color1: '#FFFF00',
+			color2: '#FF00FF',
+			color3: '#FFFFFF',
 		},
 		feature: {
 			svg: '',
-			color1: '#00FFFF',
+			color1: '#FFFF00',
+			color2: '#FF00FF',
+			color3: '#FFFFFF',
 		},
 	};
 	// }}}

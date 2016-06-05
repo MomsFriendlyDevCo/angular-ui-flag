@@ -103,19 +103,19 @@ angular.module('angular-ui-flag', [])
 			};
 
 			$scope.styleFeature = function() {
-				var splits = $scope.splitColors($scope.elementSections.feature.children[0]);
+				var splits = $scope.splitColors($scope.elementSections.feature);
 
-				splits[0].forEach(function(elem) { elem.css('fill', $scope.style.background.color1) });
-				splits[1].forEach(function(elem) { elem.css('fill', $scope.style.background.color2) });
-				splits[2].forEach(function(elem) { elem.css('fill', $scope.style.background.color3) });
+				splits[0].forEach(function(elem) { elem.css('fill', $scope.style.feature.color1) });
+				splits[1].forEach(function(elem) { elem.css('fill', $scope.style.feature.color2) });
+				splits[2].forEach(function(elem) { elem.css('fill', $scope.style.feature.color3) });
 			};
 			// }}}
 			// }}}
 
 			// Watching + trigger redrawing {{{
 			$scope.$watchGroup(['style.background.svg', 'style.background.color1', 'style.background.color2', 'style.background.color3'], $scope.redrawBackground);
-			$scope.$watchGroup(['style.foreground.svg', 'style.foreground.color1'], $scope.redrawForeground);
-			$scope.$watchGroup(['style.feature.svg', 'style.background.svg', 'style.feature.color1'], $scope.redrawFeature);
+			$scope.$watchGroup(['style.foreground.svg', 'style.foreground.color1', 'style.foreground.color2', 'style.foreground.color3'], $scope.redrawForeground);
+			$scope.$watchGroup(['style.feature.svg', 'style.background.svg', 'style.feature.color1', 'style.feature.color2', 'style.feature.color3'], $scope.redrawFeature);
 			// }}}
 		},
 		link: function($scope, elem, attr, ctrl) {
