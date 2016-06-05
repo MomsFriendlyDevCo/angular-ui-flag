@@ -10,9 +10,19 @@
 		"colorCount": 1
 	},
 	{
+		"title": "Stripe (Left)",
+		"file": "svg/fg/stripe-left.svg",
+		"colorCount": 1
+	},
+	{
 		"title": "Triangle (Left)",
 		"file": "svg/fg/triangle-left.svg",
 		"colorCount": 1
+	},
+	{
+		"title": "Triangle (Left + Complex)",
+		"file": "svg/fg/triangle-left-complex.svg",
+		"colorCount": 3
 	},
 	{
 		"title": "Triangle (Left + Blunted)",

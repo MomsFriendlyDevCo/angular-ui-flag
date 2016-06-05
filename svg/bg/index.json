@@ -25,8 +25,8 @@
 		"colorCount": 2
 	},
 	{
-		"title": "Horizontal Stripes",
-		"file": "svg/bg/horiz-stripes.svg",
+		"title": "Horizontal Stripes (Double)",
+		"file": "svg/bg/horiz-stripes-double.svg",
 		"colorCount": 3
 	},
 	{
@@ -38,6 +38,16 @@
 		"title": "Horizontal Stripes (Thick)",
 		"file": "svg/bg/horiz-stripes-thick.svg",
 		"colorCount": 2
+	},
+	{
+		"title": "Horizontal Stripes (Tripple)",
+		"file": "svg/bg/horiz-stripes-tripple.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Horizontal Stripes (Tripple 2)",
+		"file": "svg/bg/horiz-stripes-tripple2.svg",
+		"colorCount": 3
 	},
 	{
 		"title": "Outline (Thick)",
