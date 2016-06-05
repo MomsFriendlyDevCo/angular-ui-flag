@@ -1,7 +1,32 @@
 [
 	{
 		"title": "Blank",
-		"file": "svg/ft/blank.svg",
+		"file": "svg/fg/blank.svg",
 		"colorCount": 0
+	},
+	{
+		"title": "Circle",
+		"file": "svg/fg/circle.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Triangle (Left)",
+		"file": "svg/fg/triangle-left.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Triangle (Left + Blunted)",
+		"file": "svg/fg/triangle-left-blunted.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Triangle (Right)",
+		"file": "svg/fg/triangle-right.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Triangle (Both)",
+		"file": "svg/fg/triangle-both.svg",
+		"colorCount": 2
 	}
 ]
