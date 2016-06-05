@@ -15,7 +15,7 @@
    id="svg80118"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="pointed-star.svg">
+   sodipodi:docname="star-12.svg">
   <defs
      id="defs80120">
     <clipPath
@@ -34,8 +34,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.2"
-     inkscape:cx="8.7727418"
+     inkscape:zoom="44.8"
+     inkscape:cx="9.0405989"
      inkscape:cy="6.6033384"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -57,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -74,7 +74,7 @@
     <path
        inkscape:connector-curvature="0"
        id="path45022"
-       style="fill:#000080;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
        d="m 298.20918,514.90842 8.05118,2.17646 -5.90214,-5.8999 -8.05118,-2.16266 m 8.83725,5.09968 -5.88851,5.8999 2.16715,-8.03842 5.89007,-5.91197" />
     <path
        inkscape:connector-curvature="0"
@@ -84,7 +84,7 @@
     <path
        inkscape:connector-curvature="0"
        id="path45026"
-       style="fill:#2e3062;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        d="m 299.2843,508.48424 c 2.52035,0 4.56419,2.05056 4.56419,4.5616 0,2.52483 -2.04384,4.5754 -4.56419,4.5754 -2.52156,0 -4.56539,-2.05057 -4.56539,-4.5754 0,-2.51104 2.04383,-4.5616 4.56539,-4.5616" />
     <path
        inkscape:connector-curvature="0"
