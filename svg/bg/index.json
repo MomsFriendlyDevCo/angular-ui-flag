@@ -1,0 +1,112 @@
+[
+	{
+		"title": "Plain",
+		"file": "svg/bg/plain.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Cross (Left-offset)",
+		"file": "svg/bg/left-cross.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Cross (Centered)",
+		"file": "svg/bg/cross.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Cross (Diagonal)",
+		"file": "svg/bg/cross-diag.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Corners",
+		"file": "svg/bg/corners.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Horizontal Stripes (Double)",
+		"file": "svg/bg/horiz-stripes-double.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Horizontal Stripes (Tight)",
+		"file": "svg/bg/horiz-stripes-tight.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Horizontal Stripes (Thick)",
+		"file": "svg/bg/horiz-stripes-thick.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Horizontal Stripes (Tripple)",
+		"file": "svg/bg/horiz-stripes-tripple.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Horizontal Stripes (Tripple 2)",
+		"file": "svg/bg/horiz-stripes-tripple2.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Outline (Thick)",
+		"file": "svg/bg/outline-thick.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Vertical Stripes (Double)",
+		"file": "svg/bg/vert-stripes-double.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Vertical Stripes (Tripple)",
+		"file": "svg/bg/vert-stripes-tripple.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Vertical Stripes (Fat)",
+		"file": "svg/bg/vert-stripes-fat.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Stripe 1",
+		"file": "svg/bg/stripe-1.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Stripe 2",
+		"file": "svg/bg/stripe-2.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Stripe (Burst)",
+		"file": "svg/bg/stripe-burst.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Stripe Horizontal (Thick)",
+		"file": "svg/bg/stripe-horiz-thick.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Sunburst",
+		"file": "svg/bg/sunburst.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Union Jack",
+		"file": "svg/bg/union-jack.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Union Jack (Top-Left corner)",
+		"file": "svg/bg/union-jack-corner.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Zig Zag",
+		"file": "svg/bg/zig-zag.svg",
+		"colorCount": 2
+	}
+]
