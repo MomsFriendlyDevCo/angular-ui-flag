@@ -2,6 +2,8 @@ angular-ui-flag
 ===============
 Angular directive to draw SVG flags.
 
+[Demo available on GitHub.io](http://momsfriendlydevco.github.io/angular-ui-flag)
+
 
 Installation
 =============
@@ -33,7 +35,7 @@ var app = angular.module('app', [
 ```
 
 
-See the [demo](demo/) directory for a working demo.
+See the [demo](demo/) app for more usage examples.
 
 
 Configuration
