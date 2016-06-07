@@ -6,6 +6,7 @@ gulp.task('gh-pages', function() {
 	return gulp.src([
 		'./LICENSE',
 		'./demo/**/*',
+		'./svg/**/*',
 		'./angular-ui-flag.js',
 		'./node_modules/jquery/dist/jquery.min.js',
 		'./node_modules/bootstrap/dist/css/bootstrap.min.css',
