@@ -56,17 +56,17 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 
 	$scope.loading = true;
 	$q.all([
-		$http.get('/svg/bg/index.json')
+		$http.get('svg/bg/index.json')
 			.then(function(res) {
 				$scope.options.backgrounds = res.data;
 			}),
 
-		$http.get('/svg/fg/index.json')
+		$http.get('svg/fg/index.json')
 			.then(function(res) {
 				$scope.options.foregrounds = res.data;
 			}),
 
-		$http.get('/svg/ft/index.json')
+		$http.get('svg/ft/index.json')
 			.then(function(res) {
 				$scope.options.features = res.data;
 			}),
