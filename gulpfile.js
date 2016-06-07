@@ -4,6 +4,7 @@ var rename = require('gulp-rename');
 
 gulp.task('gh-pages', function() {
 	return gulp.src([
+		'./LICENSE',
 		'./demo/**/*',
 		'./angular-ui-flag.js',
 		'./node_modules/jquery/dist/jquery.min.js',
@@ -24,5 +25,9 @@ gulp.task('gh-pages', function() {
 			}
 			return path;
 		}))
-		.pipe(ghPages({push: true}))
+		.pipe(ghPages({
+			push: true,
+			origin: 'origin',
+			branch: 'gh-pages',
+		}))
 });
