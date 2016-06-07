@@ -14,6 +14,7 @@ gulp.task('gh-pages', function() {
 		'./node_modules/font-awesome/css/font-awesome.min.css',
 		'./node_modules/font-awesome/fonts/fontawesome-webfont.ttf',
 		'./node_modules/font-awesome/fonts/fontawesome-webfont.woff',
+		'./node_modules/font-awesome/fonts/fontawesome-webfont.woff2',
 		'./node_modules/lodash/lodash.min.js',
 		'./node_modules/angular/angular.min.js',
 		'./node_modules/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.min.js',
