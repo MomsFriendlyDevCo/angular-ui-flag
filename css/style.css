@@ -36,3 +36,7 @@ td > a {
 ui-flag > svg > g.ui-flag-background {
 	border: 1px solid black;
 }
+
+.row pre {
+	margin: 0 10px;
+}
