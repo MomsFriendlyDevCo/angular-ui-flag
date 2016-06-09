@@ -148,7 +148,7 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 			color3: _.sample($scope.colors),
 		};
 	};
-	// }}}
+ 	// }}}
 
 	// Workaround for mobiles {{{
 	$(function() {
@@ -173,5 +173,41 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 		if (!$scope.options.backgrounds.length || !$scope.options.foregrounds.length || !$scope.options.features.length) return; // Load yet loaded everything
 		$scope.randomizeAll();
 	});
+	// }}}
+
+	// Gallery {{{
+	$scope.galleryFlags = [];
+	$scope.shuffleGallery = function() {
+		_.times(12, function(i) {
+			$scope.galleryFlags[i] = {
+				frame: {
+					width: 200,
+					height: 120,
+				},
+				background: {
+					svg: _.sample($scope.options.backgrounds).file,
+					color1: _.sample($scope.colors),
+					color2: _.sample($scope.colors),
+					color3: _.sample($scope.colors),
+				},
+				foreground: {
+					svg: _.sample($scope.options.foregrounds).file,
+					color1: _.sample($scope.colors),
+					color2: _.sample($scope.colors),
+					color3: _.sample($scope.colors),
+				},
+				feature: {
+					svg: _.sample($scope.options.features).file,
+					color1: _.sample($scope.colors),
+					color2: _.sample($scope.colors),
+					color3: _.sample($scope.colors),
+				},
+			};
+		});
+	};
+
+	$scope.pickGallery = function(item) {
+		_.merge($scope.flagStyle, _.pick(item, ['background', 'foreground', 'feature']));
+	};
 	// }}}
 });
