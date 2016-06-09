@@ -1,17 +1,22 @@
 [
 	{
-		"title": "Plain",
-		"file": "svg/bg/plain.svg",
+		"title": "Plain (Large feature)",
+		"file": "svg/bg/plain-lg.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Plain (Medium feature)",
+		"file": "svg/bg/plain-md.svg",
+		"colorCount": 1
+	},
+	{
+		"title": "Plain (Small feature)",
+		"file": "svg/bg/plain-sm.svg",
 		"colorCount": 1
 	},
 	{
 		"title": "Cross (Left-offset)",
-		"file": "svg/bg/left-cross.svg",
-		"colorCount": 2
-	},
-	{
-		"title": "Cross (Centered)",
-		"file": "svg/bg/cross.svg",
+		"file": "svg/bg/cross-left.svg",
 		"colorCount": 2
 	},
 	{
@@ -67,6 +72,16 @@
 	{
 		"title": "Vertical Stripes (Fat)",
 		"file": "svg/bg/vert-stripes-fat.svg",
+		"colorCount": 3
+	},
+	{
+		"title": "Square top left",
+		"file": "svg/bg/sq-top-left.svg",
+		"colorCount": 2
+	},
+	{
+		"title": "Square top left (stiped)",
+		"file": "svg/bg/sq-top-left-stiped.svg",
 		"colorCount": 3
 	},
 	{
