@@ -105,16 +105,16 @@ angular.module('angular-ui-flag', [])
 					.then(function(res) {
 						var boundingElem = angular.element($scope.elementSections.background).find('#feature');
 						if (!boundingElem.length) return console.warn('Cannot find #feature ID within background', $scope.style.background.svg);
-						// console.log('BOUND ELEM', boundingElem[0]);
-						// console.log('BOUND', boundingElem.attr('x'), boundingElem.attr('y'), boundingElem.attr('width'), boundingElem.attr('height'));
+						var boundingRect = boundingElem[0].getBoundingClientRect();
+						console.log('BOUNDING RECT', boundingRect);
 
 						$scope.elementSections.feature.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.feature.children[0]);
 						newSVG.attr({
-							x: boundingElem.attr('x') || '0',
-							y: boundingElem.attr('y') || '0',
-							width: boundingElem.attr('width') || $scope.style.frame.width,
-							height: boundingElem.attr('height') || $scope.style.frame.height,
+							left: boundingRect.left,
+							top: boundingRect.top,
+							width: boundingRect.width,
+							height: boundingRect.height,
 						});
 						$scope.styleFeature();
 						$scope._lastFeature = $scope.style.feature.svg;
