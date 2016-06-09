@@ -56,7 +56,9 @@ angular.module('angular-ui-flag', [])
 						newSVG.attr({
 							width: $scope.style.frame.width,
 							height: $scope.style.frame.height,
+							viewBox: '0 0 73.653713 43.963027',
 						});
+						if (newSVG[0].viewBox) newSVG[0].viewBox.baseVal.height = 43.963027;
 						$scope.styleBackground();
 						$scope._lastBackground = $scope.style.background.svg;
 					})
@@ -99,25 +101,31 @@ angular.module('angular-ui-flag', [])
 
 			// Feature {{{
 			$scope._lastFeature;
+			$scope._lastFeatureBackground;
 			$scope.redrawFeature = function() {
-				// if ($scope.style.feature.svg == $scope._lastFeature) return $scope.styleFeature(); // No need to reload - just restyle
+				if (
+					$scope.style.background.svg == $scope._lastFeatureBackground && // Background hasn't changed
+					$scope.style.feature.svg == $scope._lastFeature // Feature hasn't changed
+				) return $scope.styleFeature(); // No need to reload - just restyle
+
 				$http.get($scope.style.feature.svg)
 					.then(function(res) {
 						var boundingElem = angular.element($scope.elementSections.background).find('#feature');
 						if (!boundingElem.length) return console.warn('Cannot find #feature ID within background', $scope.style.background.svg);
-						// console.log('BOUND ELEM', boundingElem[0]);
-						// console.log('BOUND', boundingElem.attr('x'), boundingElem.attr('y'), boundingElem.attr('width'), boundingElem.attr('height'));
+						var boundingRect = boundingElem[0].getBoundingClientRect();
+						console.log('BOUNDING RECT', boundingRect);
 
 						$scope.elementSections.feature.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.feature.children[0]);
 						newSVG.attr({
-							x: boundingElem.attr('x') || '0',
-							y: boundingElem.attr('y') || '0',
-							width: boundingElem.attr('width') || $scope.style.frame.width,
-							height: boundingElem.attr('height') || $scope.style.frame.height,
+							left: boundingRect.left,
+							top: boundingRect.top,
+							width: boundingRect.width,
+							height: boundingRect.height,
 						});
 						$scope.styleFeature();
 						$scope._lastFeature = $scope.style.feature.svg;
+						$scope._lastFeatureBackground = $scope.style.background.svg;
 					})
 			};
 
