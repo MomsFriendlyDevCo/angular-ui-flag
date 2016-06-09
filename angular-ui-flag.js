@@ -56,7 +56,9 @@ angular.module('angular-ui-flag', [])
 						newSVG.attr({
 							width: $scope.style.frame.width,
 							height: $scope.style.frame.height,
+							viewBox: '0 0 73.653713 43.963027',
 						});
+						if (newSVG[0].viewBox) newSVG[0].viewBox.baseVal.height = 43.963027;
 						$scope.styleBackground();
 						$scope._lastBackground = $scope.style.background.svg;
 					})
