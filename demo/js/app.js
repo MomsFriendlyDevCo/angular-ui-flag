@@ -33,14 +33,6 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 
 	// .colors - list of nice colors to choose from {{{
 	$scope.colors = [
-		'#be252e', // Red
-		'#587bc6', // Light blue
-		'#31336b', // Dark blue
-		'#e4d12f', // Yellow
-		'#dc692b', // Orange
-		'#4a9d4c', // Green
-		'#000000', // Black
-		'#ffffff', // White
 	];
 	// }}}
 	
@@ -56,6 +48,11 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 
 	$scope.loading = true;
 	$q.all([
+		$http.get('svg/colors.json')
+			.then(function(res) {
+				$scope.colors = res.data;
+			}),
+
 		$http.get('svg/bg/index.json')
 			.then(function(res) {
 				$scope.options.backgrounds = res.data;
@@ -125,27 +122,27 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 	$scope.randomizeBackground = function() {
 		$scope.flagStyle.background = {
 			svg: _.sample($scope.options.backgrounds).file,
-			color1: _.sample($scope.colors),
-			color2: _.sample($scope.colors),
-			color3: _.sample($scope.colors),
+			color1: _.sample($scope.colors).id,
+			color2: _.sample($scope.colors).id,
+			color3: _.sample($scope.colors).id,
 		};
 	};
 
 	$scope.randomizeForeground = function() {
 		$scope.flagStyle.foreground = {
 			svg: _.sample($scope.options.foregrounds).file,
-			color1: _.sample($scope.colors),
-			color2: _.sample($scope.colors),
-			color3: _.sample($scope.colors),
+			color1: _.sample($scope.colors).id,
+			color2: _.sample($scope.colors).id,
+			color3: _.sample($scope.colors).id,
 		};
 	};
 
 	$scope.randomizeFeature = function() {
 		$scope.flagStyle.feature = {
 			svg: _.sample($scope.options.features).file,
-			color1: _.sample($scope.colors),
-			color2: _.sample($scope.colors),
-			color3: _.sample($scope.colors),
+			color1: _.sample($scope.colors).id,
+			color2: _.sample($scope.colors).id,
+			color3: _.sample($scope.colors).id,
 		};
 	};
  	// }}}
