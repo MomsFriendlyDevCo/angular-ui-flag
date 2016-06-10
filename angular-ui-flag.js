@@ -3,10 +3,12 @@ angular.module('angular-ui-flag', [])
 	return {
 		scope: {
 			style: '=',
+			width: '@?',
+			height: '@?',
 		},
 		restrict: 'AE',
 		template: 
-			'<svg width="{{style.frame.width}}" height="{{style.frame.height}}">' +
+			'<svg>' +
 				'<g class="ui-flag-background"></g>' +
 				'<g class="ui-flag-foreground"></g>' +
 				'<g class="ui-flag-feature"></g>' +
@@ -54,8 +56,8 @@ angular.module('angular-ui-flag', [])
 						$scope.elementSections.background.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.background.children[0]);
 						newSVG.attr({
-							width: $scope.style.frame.width,
-							height: $scope.style.frame.height,
+							width: $scope.calcWidth,
+							height: $scope.calcHeight,
 							viewBox: '0 0 73.653713 43.963027',
 						});
 						if (newSVG[0].viewBox) newSVG[0].viewBox.baseVal.height = 43.963027;
@@ -82,8 +84,8 @@ angular.module('angular-ui-flag', [])
 						$scope.elementSections.foreground.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.foreground.children[0]);
 						newSVG.attr({
-							width: $scope.style.frame.width,
-							height: $scope.style.frame.height,
+							width: $scope.calcWidth,
+							height: $scope.calcHeight,
 						});
 						$scope.styleForeground();
 						$scope._lastForeground = $scope.style.foreground.svg;
@@ -140,13 +142,25 @@ angular.module('angular-ui-flag', [])
 			// }}}
 
 			// Watching + trigger redrawing {{{
+			// Manage background, foreground and feature changes
 			$scope.$watchGroup(['style.background.svg', 'style.background.color1', 'style.background.color2', 'style.background.color3'], $scope.redrawBackground);
 			$scope.$watchGroup(['style.foreground.svg', 'style.foreground.color1', 'style.foreground.color2', 'style.foreground.color3'], $scope.redrawForeground);
 			$scope.$watchGroup(['style.feature.svg', 'style.background.svg', 'style.feature.color1', 'style.feature.color2', 'style.feature.color3'], $scope.redrawFeature);
+
+			// Manage width + height changes
+			$scope.$watchGroup(['width', 'height'], function() {
+				$scope.calcWidth = $scope.width || 380;
+				$scope.calcHeight = $scope.height || 250;
+				$scope.elementSections.svg.attr({
+					width: $scope.calcWidth,
+					height: $scope.calcHeight,
+				});
+			});
 			// }}}
 		},
 		link: function($scope, elem, attr, ctrl) {
 			$scope.elementSections = {
+				svg: angular.element(elem.children('svg')),
 				background: elem.find('.ui-flag-background')[0],
 				foreground: elem.find('.ui-flag-foreground')[0],
 				feature: elem.find('.ui-flag-feature')[0],
