@@ -7,8 +7,8 @@ angular.module('angular-ui-flag', [])
 			height: '@?',
 		},
 		restrict: 'AE',
-		template: 
-			'<svg>' +
+		template:
+			'<svg viewBox="0 0 {{style.frame.width || 300}} {{style.frame.height || 200}}">' +
 				'<g class="ui-flag-background"></g>' +
 				'<g class="ui-flag-foreground"></g>' +
 				'<g class="ui-flag-feature"></g>' +
