@@ -8,7 +8,7 @@ angular.module('angular-ui-flag', [])
 		},
 		restrict: 'AE',
 		template:
-			'<svg viewBox="0 0 {{style.frame.width || 500}} {{style.frame.height || 300}}">' +
+			'<svg>' +
 				'<g class="ui-flag-background"></g>' +
 				'<g class="ui-flag-foreground"></g>' +
 				'<g class="ui-flag-feature"></g>' +
@@ -151,10 +151,15 @@ angular.module('angular-ui-flag', [])
 			$scope.$watchGroup(['width', 'height'], function() {
 				$scope.calcWidth = $scope.width || 380;
 				$scope.calcHeight = $scope.height || 250;
-				$scope.elementSections.svg.attr({
-					width: $scope.calcWidth,
-					height: $scope.calcHeight,
-				});
+
+				// FIXME: Setting an explicit width and heigh may not be necessary - leaving it unset will allow svg to fill in available space
+				// $scope.elementSections.svg.attr({
+				// 	width: $scope.calcWidth,
+				// 	height: $scope.calcHeight,
+				// });
+
+				//FIXME: jQuery does not preserve attribute case so using this for the time being
+				$scope.elementSections.svg[0].setAttribute('viewBox', '0 0 ' + $scope.calcWidth + ' ' + $scope.calcHeight);
 			});
 			// }}}
 		},
