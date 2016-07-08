@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<?xml version="1.0" encoding="UTF-8"?>
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -11,16 +10,10 @@
    height="200"
    viewBox="0 0 300 200"
    version="1.1">
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+  <g id="layer1">
     <path
-       inkscape:connector-curvature="0"
-       id="path12542"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 0,200 300,0 L 300,0 0,0 0,200 Z"
-       inkscape:label="#path12542" />
+       d="m 0,200 300,0 L 300,0 0,0 0,200 Z" />
     <rect
        style="fill:none"
        id="feature"
