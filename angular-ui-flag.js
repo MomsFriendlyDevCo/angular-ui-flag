@@ -16,6 +16,10 @@ angular.module('angular-ui-flag', [])
 		controller: function($scope) {
 			$scope.elementSections; // SVG groups of each aspect of the flag (background, foreground + feature)
 
+			// Base flag dimensions (2:3 ratio)
+			const FLAG_WIDTH = 300;
+			const FLAG_HEIGHT = 200;
+
 			// Utility functions {{{
 			$scope.splitColors = function(element) {
 				var output = [[],[],[]];
@@ -56,11 +60,9 @@ angular.module('angular-ui-flag', [])
 						$scope.elementSections.background.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.background.children[0]);
 						newSVG.attr({
-							width: $scope.calcWidth,
-							height: $scope.calcHeight,
-							viewBox: '0 0 73.653713 43.963027',
+							width: FLAG_WIDTH,
+							height: FLAG_HEIGHT,
 						});
-						if (newSVG[0].viewBox) newSVG[0].viewBox.baseVal.height = 43.963027;
 						$scope.styleBackground();
 						$scope._lastBackground = $scope.style.background.svg;
 					})
@@ -84,8 +86,8 @@ angular.module('angular-ui-flag', [])
 						$scope.elementSections.foreground.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.foreground.children[0]);
 						newSVG.attr({
-							width: $scope.calcWidth,
-							height: $scope.calcHeight,
+							width: FLAG_WIDTH,
+							height: FLAG_HEIGHT,
 						});
 						$scope.styleForeground();
 						$scope._lastForeground = $scope.style.foreground.svg;
@@ -114,16 +116,16 @@ angular.module('angular-ui-flag', [])
 					.then(function(res) {
 						var boundingElem = angular.element($scope.elementSections.background).find('#feature');
 						if (!boundingElem.length) return console.warn('Cannot find #feature ID within background', $scope.style.background.svg);
-						var boundingRect = boundingElem[0].getBoundingClientRect();
+						var boundingRect = boundingElem[0];
 						console.log('BOUNDING RECT', boundingRect);
 
 						$scope.elementSections.feature.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.feature.children[0]);
 						newSVG.attr({
-							left: boundingRect.left,
-							top: boundingRect.top,
-							width: boundingRect.width,
-							height: boundingRect.height,
+							left: boundingRect.getAttribute('x'),
+							top: boundingRect.getAttribute('y'),
+							width: boundingRect.getAttribute('width'),
+							height: boundingRect.getAttribute('height'),
 						});
 						$scope.styleFeature();
 						$scope._lastFeature = $scope.style.feature.svg;
@@ -149,17 +151,17 @@ angular.module('angular-ui-flag', [])
 
 			// Manage width + height changes
 			$scope.$watchGroup(['width', 'height'], function() {
-				$scope.calcWidth = $scope.width || 380;
-				$scope.calcHeight = $scope.height || 250;
+				$scope.calcWidth = $scope.width || 'auto';
+				$scope.calcHeight = $scope.height || 'auto';
 
 				// FIXME: Setting an explicit width and heigh may not be necessary - leaving it unset will allow svg to fill in available space
-				// $scope.elementSections.svg.attr({
-				// 	width: $scope.calcWidth,
-				// 	height: $scope.calcHeight,
-				// });
+				$scope.elementSections.svg.attr({
+					width: $scope.calcWidth,
+					height: $scope.calcHeight,
+				});
 
 				//FIXME: jQuery does not preserve attribute case so using this for the time being
-				$scope.elementSections.svg[0].setAttribute('viewBox', '0 0 ' + $scope.calcWidth + ' ' + $scope.calcHeight);
+				$scope.elementSections.svg[0].setAttribute('viewBox', '0 0 ' + FLAG_WIDTH + ' ' + FLAG_HEIGHT);
 			});
 			// }}}
 		},
