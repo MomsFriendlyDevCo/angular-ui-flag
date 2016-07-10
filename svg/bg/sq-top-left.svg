@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -13,16 +12,17 @@
    version="1.1">
   <g>
     <path
-       inkscape:connector-curvature="0"
-       id="path45016"
-       style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 0,200 300,0 L 300,0 0,0 0,200 Z" />
+      style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+      d="m 0,200 300,0 L 300,0 0,0 0,200 Z" />
+    <path
+      style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+      d="M 0,0 120,0 120,80 0,80 Z" />
     <rect
-       style="fill:#00ff00"
+       style="fill:none"
        id="feature"
-       width="120"
-       height="80"
-       x="0"
-       y="0" />
+       width="110"
+       height="70"
+       x="5"
+       y="5" />
   </g>
 </svg>
