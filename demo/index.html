@@ -52,7 +52,9 @@
 					</div>
 					<div ng-if="galleryFlags.length" class="modal-body">
 						<div class="row">
-							<a ng-repeat="i in [1,2,3,4,5,6,7,8,9,10,11,12]" ng-click="pickGallery(galleryFlags[i])" data-dismiss="modal" data-target="modal-gallery" class="col-md-3 text-center"><ui-flag style="galleryFlags[i]"></ui-flag></a>
+							<a ng-repeat="i in [1,2,3,4,5,6,7,8,9,10,11,12]" ng-click="pickGallery(galleryFlags[i])" data-dismiss="modal" data-target="modal-gallery" class="col-md-3 text-center">
+								<ui-flag style="galleryFlags[i]" width="200" height="100"></ui-flag>
+							</a>
 						</div>
 					</div>
 				</div>
