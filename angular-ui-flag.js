@@ -122,8 +122,8 @@ angular.module('angular-ui-flag', [])
 						$scope.elementSections.feature.innerHTML = res.data;
 						var newSVG = angular.element($scope.elementSections.feature.children[0]);
 						newSVG.attr({
-							left: boundingRect.getAttribute('x'),
-							top: boundingRect.getAttribute('y'),
+							x: boundingRect.getAttribute('x'),
+							y: boundingRect.getAttribute('y'),
 							width: boundingRect.getAttribute('width'),
 							height: boundingRect.getAttribute('height'),
 						});
