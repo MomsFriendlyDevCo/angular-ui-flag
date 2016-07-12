@@ -1,89 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<?xml version="1.0" encoding="UTF-8"?>
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="20.787106mm"
-   height="12.124927mm"
-   viewBox="0 0 73.655098 42.962338"
-   id="svg80012"
-   version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="horiz-stripes-tight.svg">
-  <defs
-     id="defs80014">
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath45092">
-      <path
-         d="m 2065.54,1741.12 427.082,0 0,249.113 -427.082,0 0,-249.113 z"
-         id="path45094"
-         inkscape:connector-curvature="0" />
-    </clipPath>
-  </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="11.2"
-     inkscape:cx="23.434696"
-     inkscape:cy="10.766875"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1029"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata80017">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-337.45816,-453.73817)">
-    <g
-       id="feature"
-       inkscape:label="#g80075">
-      <path
-         d="m 337.45816,475.22563 73.6551,0 0,-21.48763 -73.6551,0 0,21.48763 z"
-         style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path45096"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 337.45816,496.70051 73.6551,0 0,-21.47488 -73.6551,0 0,21.47488 z"
-         style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path45098"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 337.45816,476.93817 73.6551,0 0,-3.43777 -73.6551,0 0,3.43777 z"
-         style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path45100"
-         inkscape:connector-curvature="0" />
-    </g>
+   width="300"
+   height="200"
+   viewBox="0 0 300 200"
+   version="1.1">
+  <g id="feature">
+    <path
+       d="M 0,0 300,0 300,90 0,90 0,0 z"
+       style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="M 0,90 300,90 300,110 0,110 0,90 z"
+       style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="M 0,110 300,110 300,200 0,200 0,110 z"
+       style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none" />
   </g>
 </svg>
