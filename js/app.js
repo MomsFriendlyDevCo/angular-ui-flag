@@ -31,7 +31,7 @@ app.controller('flagExampleController', function($scope, $http, $interval, $q) {
 	$scope.colors = [
 	];
 	// }}}
-
+	
 	// .options - available options for each flag part {{{
 	$scope.options = {
 		activeBackground: null,

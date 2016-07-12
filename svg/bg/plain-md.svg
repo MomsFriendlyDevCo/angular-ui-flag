@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<?xml version="1.0" encoding="UTF-8"?>
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -7,78 +6,20 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="20.786911mm"
-   height="12.125511mm"
-   viewBox="0 0 73.654409 42.964409"
-   id="svg78394"
-   version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="plain-md.svg">
-  <defs
-     id="defs78396">
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath12538">
-      <path
-         d="m 29.0859,11560.4 427.078,0 0,249.125 -427.078,0 0,-249.125 z"
-         id="path12540"
-         inkscape:connector-curvature="0" />
-    </clipPath>
-  </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="11.2"
-     inkscape:cx="9.1749627"
-     inkscape:cy="21.786866"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1029"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata78399">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-314.60132,-402.30866)">
+   width="300"
+   height="200"
+   viewBox="0 0 300 200"
+   version="1.1">
+  <g id="layer1">
     <path
-       inkscape:connector-curvature="0"
-       id="path12542"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 314.60132,445.27307 73.65441,0 0,-42.96441 -73.65441,0 0,42.96441 z"
-       inkscape:label="#path12542" />
+       d="m 0,200 300,0 L 300,0 0,0 0,200 Z" />
     <rect
        style="fill:none"
        id="feature"
-       width="40"
-       height="34.732143"
-       x="331.20847"
-       y="405.98737"
-       inkscape:label="#rect3497" />
+       width="140"
+       height="140"
+       x="80"
+       y="30" />
   </g>
 </svg>
